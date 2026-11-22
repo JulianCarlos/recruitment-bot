@@ -1,0 +1,51 @@
+# Discord IDs (enable Developer Mode and use Copy ID). Replace example values.
+guild_id = 100000000000000001
+recruit_role = 100000000000000002
+evaluation_channel = 100000000000000003
+voice_channels = []
+chat_channels = [100000000000000004]
+feed_channels = [100000000000000005]
+bot_ids = [100000000000000006]
+webhook_ids = []
+owned_servers = ["The Island 101", "Scorched Earth 202"]
+recruit_servers = ["The Island 101"]
+window_days = 14
+retention_days = 60
+status_hours = 8
+refresh_minutes = 5
+chat_cooldown_minutes = 10
+# A reaction to another member's message can qualify one Discord activity day.
+track_reactions = true
+reaction_activity_days = true
+reaction_cooldown_minutes = 10
+
+board_title = "Tribe field report"
+accent_color = "54C9A3"
+max_session_hours = 12
+# Roles allowed to read the board alongside staff with Manage Server.
+board_reader_roles = []
+missions = [
+  "Supply run · Restock a base resource with a tribe lead.",
+  "Field scout · Survey an assigned server and report a useful finding.",
+  "Base shift · Help an officer complete a maintenance round."
+]
+
+# Points scale linearly to each target. Weights must add to 10.
+[weights]
+tenure = 2
+game_days = 3
+chat_days = 1
+contributions = 4
+[targets]
+tenure = 14
+game_days = 6
+chat_days = 5
+contributions = 4
+
+# Example format only. Patterns search one message body or one flattened embed.
+# Groups: player, server. A channel_servers mapping may supply a missing server.
+[patterns]
+join = '(?im)^Player: (?P<player>[^\r\n]+) joined (?P<server>[^\r\n]+)$'
+leave = '(?im)^Player: (?P<player>[^\r\n]+) left (?P<server>[^\r\n]+)$'
+[channel_servers]
+# "100000000000000005" = "The Island 101"

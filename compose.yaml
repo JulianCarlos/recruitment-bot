@@ -1,0 +1,10 @@
+services:
+  recruit-watch:
+    build: .
+    restart: unless-stopped
+    environment:
+      DISCORD_TOKEN: ${DISCORD_TOKEN:?Set DISCORD_TOKEN before starting}
+    volumes:
+      - recruit-data:/app/data
+volumes:
+  recruit-data:
